@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ws
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: 127.0.0.1:8848
+
+rocketmq:
+  name-server: 0.0.0.0:9876
+  producer:
+    send-message-timeout: 5000
+    group: "websocket-cluster"
